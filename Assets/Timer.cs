@@ -9,10 +9,13 @@ public class Timer : MonoBehaviour
 
     public float timeLeft = 60;
 
+    public GameObject powerup;
+
     // Update is called once per frame
     void Update()
     {
-        if(timeLeft <= 0) {
+
+        if (timeLeft <= 0) {
             Application.Quit();
         } else {
             timeLeft -= Time.deltaTime;
@@ -20,5 +23,7 @@ public class Timer : MonoBehaviour
             float seconds = Mathf.FloorToInt(timeLeft % 60);
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
+
+
     }
 }
